@@ -35,6 +35,8 @@ public class MenusActions {
 		
 		storeItems.addNewItems(id, itemName, itemWeight, itemPrice, itemStock);
 		storeItems.alert();
+
+		s.close();
 	}
 	
 	public void viewAllItems() {

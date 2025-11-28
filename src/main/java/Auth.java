@@ -4,7 +4,7 @@ public class Auth {
 	private String name;
 	private String email;
 	private String password;
-	
+
 	private int idRole;
 	private String role;
 
@@ -15,32 +15,32 @@ public class Auth {
 	private boolean checkPass;
 
 	private boolean approval;
-	
-	       private ArrayList<String> adminEmails;
-	      private ArrayList<String> adminPasswords;
-	      
-	      // CUSTOMER
-	      private ArrayList<String> customerEmails;
-	      private ArrayList<String> customerPasswords;
-	      
-	      //CLERK
-	      private ArrayList<String> clerkEmails;
-	      private ArrayList<String> clerkPasswords;
+
+	private ArrayList<String> adminEmails;
+	private ArrayList<String> adminPasswords;
+
+	// CUSTOMER
+	private ArrayList<String> customerEmails;
+	private ArrayList<String> customerPasswords;
+
+	// CLERK
+	private ArrayList<String> clerkEmails;
+	private ArrayList<String> clerkPasswords;
 
 	// constructor
 	public Auth() {
-	      // ADMIN
-	      adminEmails = new ArrayList<>();
-	      adminPasswords = new ArrayList<>();
-	      
-	      // CUSTOMER
-	      customerEmails = new ArrayList<>();
-	      customerPasswords = new ArrayList<>();
-	      
-	      //CLERK
-	      clerkEmails = new ArrayList<>();
-	      clerkPasswords = new ArrayList<>();
-	      
+		// ADMIN
+		adminEmails = new ArrayList<>();
+		adminPasswords = new ArrayList<>();
+
+		// CUSTOMER
+		customerEmails = new ArrayList<>();
+		customerPasswords = new ArrayList<>();
+
+		// CLERK
+		clerkEmails = new ArrayList<>();
+		clerkPasswords = new ArrayList<>();
+
 	}
 
 	// to display the right menu for each role
@@ -52,13 +52,12 @@ public class Auth {
 		}
 	}
 
-      // ADMIN SIGN IN
+	// ADMIN SIGN IN
 	public void adminSignIn() {
 		Scanner s = new Scanner(System.in);
 		String i1;
 		String i2;
 		String i3;
-
 
 		System.out.println("===== ADMIN =====");
 		System.out.println("");
@@ -81,15 +80,11 @@ public class Auth {
 
 				while (true) {
 
-
-
 					if (i3.length() == 8 || this.checkPasswordActive(i3) == true) {
 
 						// Then check if the password match to the registered account of the admin
 						this.approval = true;
 
-						
-						
 						break;
 
 					} else {
@@ -97,7 +92,6 @@ public class Auth {
 						System.out.println(" == Please enter your Password again. == ");
 						i3 = s.nextLine();
 						System.out.println("");
-
 
 					}
 
@@ -115,14 +109,13 @@ public class Auth {
 
 		setCredentials(i1, i2, i3);
 	}
-	
+
 	// CUSTOMER SIGN IN
 	public void customerSignIn() {
-	      Scanner s = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
 		String i1;
 		String i2;
 		String i3;
-
 
 		System.out.println("===== CUSTOMER =====");
 		System.out.println("");
@@ -166,14 +159,13 @@ public class Auth {
 		}
 		setCredentials(i1, i2, i3);
 	}
-	
-	//CLERK SIGN IN
+
+	// CLERK SIGN IN
 	public void clerkSignIn() {
-	      Scanner s = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
 		String i1;
 		String i2;
 		String i3;
-
 
 		System.out.println("===== CLERKS' SIGN IN =====");
 		System.out.println("");
@@ -218,7 +210,6 @@ public class Auth {
 		setCredentials(i1, i2, i3);
 	}
 
-
 	// CHECK EMAIL ADMIN
 	public boolean checkEmailActive(String em) {
 
@@ -249,7 +240,7 @@ public class Auth {
 
 	// CHECK PASSWORD ADMIN
 	public boolean checkPasswordActive(String password) {
-		//ArrayList<String> adminPasswords = new ArrayList<>();
+		// ArrayList<String> adminPasswords = new ArrayList<>();
 
 		adminPasswords.add("12345678");
 		adminPasswords.add("mary1111");
@@ -261,7 +252,7 @@ public class Auth {
 
 		String check = "The password is for user number " + adminPasswords.indexOf(password);
 
-		/*System.out.println(check);*/
+		/* System.out.println(check); */
 
 		this.passId = adminPasswords.indexOf(password);
 		this.checkPass = adminPasswords.contains(password);
@@ -273,7 +264,7 @@ public class Auth {
 		}
 
 	}
-	
+
 	// EMAIL CHECKER AUTH FOR CUSTOMERS
 	public boolean checkEmailActiveC(String em) {
 
@@ -301,10 +292,10 @@ public class Auth {
 			return false;
 		}
 	}
-	
+
 	// CHECK PASSWORD CUSTOMER
 	public boolean checkPasswordActiveC(String password) {
-		//ArrayList<String> customerPasswords = new ArrayList<>();
+		// ArrayList<String> customerPasswords = new ArrayList<>();
 
 		customerPasswords.add("12345678");
 		customerPasswords.add("mary1111");
@@ -316,7 +307,7 @@ public class Auth {
 
 		String check = "The password is for user number " + customerPasswords.indexOf(password);
 
-		/*System.out.println(check);*/
+		/* System.out.println(check); */
 
 		this.passId = customerPasswords.indexOf(password);
 		this.checkPass = customerPasswords.contains(password);
@@ -328,11 +319,11 @@ public class Auth {
 		}
 
 	}
-	
+
 	// CHECK EMAIL CLERK
 	public boolean checkEmailActiveI(String em) {
 
-		//ArrayList<String> clerkEmails = new ArrayList<>();
+		// ArrayList<String> clerkEmails = new ArrayList<>();
 
 		clerkEmails.add("new@clerk.com");
 		clerkEmails.add("mary@clerk.com");
@@ -359,7 +350,7 @@ public class Auth {
 
 	// CHECK PASSWORD CLERK
 	public boolean checkPasswordActiveI(String password) {
-		//ArrayList<String> clerkPasswords = new ArrayList<>();
+		// ArrayList<String> clerkPasswords = new ArrayList<>();
 
 		clerkPasswords.add("12345678");
 		clerkPasswords.add("mary1111");
@@ -371,7 +362,7 @@ public class Auth {
 
 		String check = "The password is for user number " + clerkPasswords.indexOf(password);
 
-		/*System.out.println(check);*/
+		/* System.out.println(check); */
 
 		this.passId = clerkPasswords.indexOf(password);
 		this.checkPass = clerkPasswords.contains(password);
@@ -383,9 +374,8 @@ public class Auth {
 		}
 
 	}
-	
-	
-	//SETTERS
+
+	// SETTERS
 
 	// Setting Credentials to be accessible outside the class
 	public void setCredentials(String name, String email, String password) {
@@ -393,23 +383,23 @@ public class Auth {
 		this.email = email;
 		this.password = password;
 	}
-	
+
 	public void setIdRole(int id) {
-	      this.idRole = id;
+		this.idRole = id;
 	}
-	
+
 	public void setRole(String in) {
-	      this.role = in;
+		this.role = in;
 	}
-	
+
 	// GETTERS
-	
+
 	public int getIdRole() {
-	      return this.idRole;
+		return this.idRole;
 	}
-	
+
 	public String getRole() {
-	      return this.role;
+		return this.role;
 	}
 
 	public String getName() {

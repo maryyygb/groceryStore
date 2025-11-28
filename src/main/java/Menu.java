@@ -119,6 +119,7 @@ public class Menu extends MenusActions {
 	public void userChoice() {
 		Scanner s = new Scanner(System.in);
 		this.choice = s.nextInt();
+		s.close();
 	}
 
 	public void adminChoiceChecker() {
